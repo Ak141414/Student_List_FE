@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Student_List_FE/static/css/main.301c409a.css",
+    "main.js": "/Student_List_FE/static/js/main.0898cccf.js",
+    "index.html": "/Student_List_FE/index.html",
+    "main.301c409a.css.map": "/Student_List_FE/static/css/main.301c409a.css.map",
+    "main.0898cccf.js.map": "/Student_List_FE/static/js/main.0898cccf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.301c409a.css",
+    "static/js/main.0898cccf.js"
+  ]
+}
