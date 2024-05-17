@@ -22,6 +22,8 @@ import EditNoteIcon from "@mui/icons-material/EditNote";
 import { useState, useEffect } from "react";
 import useIsSmallScreen from "./hooks/useIsSmallScreen";
 
+const serverURL = "https://student-list-be.onrender.com";
+
 interface Student {
   stu_id?: number;
   name: string;
@@ -174,7 +176,7 @@ function Main() {
   };
 
   const getStudentsData = () => {
-    fetch("http://localhost:3002/students", {
+    fetch(serverURL + "/students", {
       method: "GET",
     })
       .then((response) => response.json())
@@ -191,7 +193,7 @@ function Main() {
   }, []);
 
   const onStudentAdd = () => {
-    fetch("http://localhost:3002/student", {
+    fetch(serverURL + "/student", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -215,7 +217,7 @@ function Main() {
   const onStudentEdit = () => {
     const tempUpdateStudent = { ...updateStudent };
     delete tempUpdateStudent.stu_id;
-    fetch(`http://localhost:3002/student/${updateStudent.stu_id}`, {
+    fetch(serverURL + `/student/${updateStudent.stu_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -237,7 +239,7 @@ function Main() {
   };
 
   const onStudentDelete = () => {
-    fetch(`http://localhost:3002/student/${updateStudent.stu_id}`, {
+    fetch(serverURL + `/student/${updateStudent.stu_id}`, {
       method: "DELETE",
     })
       .then((response) => response.text())
